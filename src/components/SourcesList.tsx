@@ -1,5 +1,3 @@
-"use client";
-
 import type { LegalSource } from "@/types/contract";
 
 interface Props {

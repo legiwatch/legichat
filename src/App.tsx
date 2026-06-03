@@ -1,5 +1,3 @@
-"use client";
-
 import {
   AssistantRuntimeProvider,
   ThreadPrimitive,
@@ -7,7 +5,8 @@ import {
   ComposerPrimitive,
   useMessage,
 } from "@assistant-ui/react";
-import { useLegichatRuntime, TOTAL_STEPS, LegalCustomMeta } from "@/lib/use-legichat-runtime";
+import { useLegichatRuntime, TOTAL_STEPS } from "@/lib/use-legichat-runtime";
+import type { LegalCustomMeta } from "@/lib/use-legichat-runtime";
 import SourcesList from "@/components/SourcesList";
 import LoadingSteps from "@/components/LoadingSteps";
 import ReactMarkdown from "react-markdown";
