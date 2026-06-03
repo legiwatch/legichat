@@ -19,6 +19,10 @@ body {
 }
 
 /* Markdown prose styles for assistant answers */
+.prose {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
 .prose h2 {
   @apply text-base font-semibold text-slate-800 mt-4 mb-2;
 }
@@ -42,4 +46,17 @@ body {
 }
 .prose code {
   @apply bg-slate-100 text-slate-700 text-xs px-1.5 py-0.5 rounded font-mono;
+}
+.prose pre {
+  @apply overflow-x-auto whitespace-pre-wrap break-words;
+}
+.prose table {
+  @apply w-full text-xs;
+}
+.prose table td,
+.prose table th {
+  @apply px-2 py-1 border border-slate-200;
+}
+.prose table th {
+  @apply font-semibold bg-slate-50;
 }
