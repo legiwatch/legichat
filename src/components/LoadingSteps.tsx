@@ -1,5 +1,3 @@
-"use client";
-
 interface Props {
   currentStep: string;
   stepIndex: number;

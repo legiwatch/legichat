@@ -1,5 +1,3 @@
-"use client";
-
 import {
   AssistantRuntimeProvider,
   ThreadPrimitive,
@@ -7,7 +5,8 @@ import {
   ComposerPrimitive,
   useMessage,
 } from "@assistant-ui/react";
-import { useLegichatRuntime, TOTAL_STEPS, LegalCustomMeta } from "@/lib/use-legichat-runtime";
+import { useLegichatRuntime, TOTAL_STEPS } from "@/lib/use-legichat-runtime";
+import type { LegalCustomMeta } from "@/lib/use-legichat-runtime";
 import SourcesList from "@/components/SourcesList";
 import LoadingSteps from "@/components/LoadingSteps";
 import ReactMarkdown from "react-markdown";
@@ -17,7 +16,7 @@ import ReactMarkdown from "react-markdown";
 function UserMessage() {
   return (
     <MessagePrimitive.Root className="flex justify-end px-4 py-2">
-      <div className="max-w-[80%] rounded-2xl rounded-tr-sm bg-blue-600 px-4 py-2.5 text-sm text-white">
+      <div className="max-w-[80%] rounded-2xl rounded-tr-sm bg-blue-600 px-4 py-2.5 text-sm text-white break-words">
         <MessagePrimitive.Parts components={{ Text: ({ text }) => <span>{text}</span> }} />
       </div>
     </MessagePrimitive.Root>
@@ -40,7 +39,7 @@ function AssistantMessageText() {
   }
 
   return (
-    <div>
+    <div className="min-w-0">
       <div className="prose max-w-none">
         <ReactMarkdown>{text}</ReactMarkdown>
       </div>
@@ -54,11 +53,11 @@ function AssistantMessageText() {
 function AssistantMessage() {
   return (
     <MessagePrimitive.Root className="flex justify-start px-4 py-2">
-      <div className="flex gap-3 max-w-[90%]">
+      <div className="flex gap-3 w-full min-w-0">
         <div className="flex-shrink-0 mt-0.5 flex items-center justify-center w-7 h-7 rounded-full bg-slate-200 text-slate-600 text-xs font-bold">
           L
         </div>
-        <div className="flex-1 rounded-2xl rounded-tl-sm bg-white border border-slate-200 px-4 py-3 text-sm text-slate-800 shadow-sm">
+        <div className="flex-1 min-w-0 rounded-2xl rounded-tl-sm bg-white border border-slate-200 px-4 py-3 text-sm text-slate-800 shadow-sm overflow-hidden">
           <AssistantMessageText />
         </div>
       </div>

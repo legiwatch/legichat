@@ -1,5 +1,3 @@
-"use client";
-
 import type { LegalSource } from "@/types/contract";
 
 interface Props {
@@ -27,7 +25,7 @@ function SourceCard({ source }: { source: LegalSource }) {
   const breadcrumb = source.hierarchie.slice(-2).join(" › ");
 
   const inner = (
-    <div className="group flex flex-col gap-0.5 rounded-lg border border-slate-200 bg-slate-50 px-3 py-2.5 text-sm transition-colors hover:border-blue-300 hover:bg-blue-50">
+    <div className="group flex flex-col gap-0.5 rounded-lg border border-slate-200 bg-slate-50 px-3 py-2.5 text-sm transition-colors hover:border-blue-300 hover:bg-blue-50 break-words">
       <div className="flex items-center gap-2">
         <span className="font-mono text-xs font-semibold text-blue-700 bg-blue-100 px-1.5 py-0.5 rounded">
           Art. {source.numero}
@@ -39,7 +37,7 @@ function SourceCard({ source }: { source: LegalSource }) {
       {breadcrumb && (
         <p className="text-xs text-slate-400 truncate">{breadcrumb}</p>
       )}
-      <p className="text-xs text-slate-600 line-clamp-2 mt-1 leading-relaxed">
+      <p className="text-xs text-slate-600 line-clamp-3 mt-1 leading-relaxed break-words">
         {source.extrait.replace(/^Article [A-Z0-9-]+\n/, "")}
       </p>
     </div>
